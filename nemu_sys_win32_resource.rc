@@ -1,0 +1,55 @@
+#include<winres.h>
+#include<winuser.rh>
+#include"nemu_sys_win32_resource.h"
+
+#define BUTTON_WIDTH_SMALL 25
+#define BUTTON_WIDTH_NORMAL 50
+#define BUTTON_WIDTH_LARGE 75
+#define CONTROL_ITEM_HEIGHT 14
+#define MARGIN_VERTICAL 4
+#define MARGIN_HORIZONTAL 2
+
+#define VS_VERSION_INFO 1
+#define DIALOG_WINDOW_STYLE (DS_MODALFRAME | DS_SETFONT | DS_CENTER | WS_SYSMENU | WS_POPUP | WS_CAPTION)
+
+//MAINICON ICON "../nemu_icon_32x32.ico"
+
+DIALOGID_MISC_ABOUT DIALOG 0, 0, 240, 200
+	STYLE DIALOG_WINDOW_STYLE
+	CAPTION "About NEMU"
+	FONT 9, "Segoe UI"
+{
+	CTEXT	"An example program showing how to use Dialog Boxes\r\n\r\nby theForger", DIALOGID_STATIC, 16, 18, 144, 33
+	DEFPUSHBUTTON "OK", BUTTONID_OK, 174, 18, BUTTON_WIDTH_NORMAL, CONTROL_ITEM_HEIGHT
+	PUSHBUTTON "Cancel", BUTTONID_CANCEL, 174, 35, 50, 14
+	//GROUPBOX "About NEMU", DIALOGID_STATIC, 7, 7, 225, 52
+}
+
+VS_VERSION_INFO VERSIONINFO
+	FILEVERSION 0,0,0,0
+	PRODUCTVERSION 0,0,0,0
+	//FILEFLAGSMASK 0x3FL
+	//FILEFLAGS 0x0L
+	FILEOS VOS_NT_WINDOWS32
+	FILETYPE VFT_APP
+	//FILESUBTYPE 0x0L
+{
+	BLOCK "StringFileInfo"
+	{
+		BLOCK "040904E4"
+		{
+			VALUE "CompanyName", "..."
+			VALUE "FileDescription", "..."
+			VALUE "FileVersion", "0.0.0.0"
+			VALUE "InternalName", "..."
+			VALUE "LegalCopyright", "© ..."
+			VALUE "OriginalFilename", "..."
+			VALUE "ProductName", "..."
+			VALUE "ProductVersion", "0.0"
+		}
+	}
+	BLOCK "VarFileInfo"
+	{
+		VALUE "Translation", 0x409, 1252
+	}
+}
